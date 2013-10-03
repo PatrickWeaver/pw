@@ -13,5 +13,9 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-     url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', 'gallery.views.home'),
+    url(r'^projects/$', 'gallery.views.projects'),
+    url(r'^projects/(\d+)/$', 'gallery.views.project'),
+    url(r'^projects/(\d+)/(\d+)/$', 'gallery.views.gallery_item')
 )

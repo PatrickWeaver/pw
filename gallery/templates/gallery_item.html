@@ -1,0 +1,18 @@
+{% extends "gallery_base.html" %}
+
+{% block title %}
+ - {{ project.name }} - {{ gallery_item.name }}
+{% endblock %}
+
+{% block content %}
+<h2><a href="{% url 'gallery.views.project' project.id %}">{{ project.name }}</a>:</h2><br>
+<h3>{{ gallery_item.name }}:</h3><br>
+
+    {% if gallery_item %}
+
+        <a href="{{ gallery_item.image.url }}"><img src="{{ gallery_item.image.url }}"></a>
+
+    {% endif %}
+
+
+{% endblock %}

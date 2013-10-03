@@ -1,0 +1,23 @@
+{% extends "gallery_base.html" %}
+
+{% block title %}
+ - Projects
+{% endblock %}
+
+{% block content %}
+
+<h2>Projects:</h2>
+
+{% if projects %}
+    <ul>
+        {% for project in projects %}
+            <li>
+                <a href="{% url 'gallery.views.project' project.id %}">{{ project.name }}{% if project.year %} - {{ project.year }}{% endif %}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+
+
+{% endblock %}

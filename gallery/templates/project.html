@@ -1,0 +1,26 @@
+{% extends "gallery_base.html" %}
+
+{% block title %}
+ - {{ project.name }}
+{% endblock %}
+
+{% block content %}
+<h2>{{ project.name }}:</h2><br>
+
+    {% if gallery_items %}
+        {% for item in gallery_items %}
+            <a href="{% url 'gallery.views.gallery_item' project.id item.id %}">{{ item.name }}</a>
+            <br>
+            <a href="{% url 'gallery.views.gallery_item' project.id item.id %}"><img src="
+            {% if item.thumbnail %}
+                {{ item.thumbnail.url }}
+            {% else %}
+                {{ item.image.url }}
+            {% endif %}
+            " width="100" height="auto"></a><br><br>
+
+        {% endfor %}
+    {% endif %}
+
+
+{% endblock %}

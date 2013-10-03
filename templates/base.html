@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+
+    <title>Patrick Weaver
+    {% block title %}
+    {% endblock %}
+    </title>
+
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+
+<body>
+    <h1>Patrick Weaver</h1>
+    <ul>
+        <li>
+            <a href="{% url 'gallery.views.home' %}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'gallery.views.projects' %}">Projects</a>
+        </li>
+        <li>
+            <a href="{% url 'admin:index' %}">Admin</a>
+        </li>
+    </ul>
+    {% block section %}
+
+    {% endblock %}
+
+</body>
+
+</html>
