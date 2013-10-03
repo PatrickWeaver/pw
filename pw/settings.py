@@ -56,9 +56,6 @@ AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 ADMIN_MEDIA_PREFIX = S3_URL + 'admin/'
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
 MEDIA_ROOT = '/media/'
@@ -120,7 +117,8 @@ ROOT_URLCONF = 'pw.urls'
 WSGI_APPLICATION = 'pw.wsgi.application'
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates'),
+    '/home/patrick/sites/pw/templates',
+    '/home/patrick/sites/pw/gallery/templates',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -191,6 +189,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['*']
 
 # Static asset configuration
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
