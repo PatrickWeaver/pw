@@ -1,4 +1,6 @@
 from django.db import models
+from imagekit.models import ImageSpecField
+from imagekit.processors import ResizeToFit, ResizeToFill
 
 # Create your models here.
 class Project(models.Model):
@@ -29,7 +31,10 @@ class GalleryItem(models.Model):
     media_type = models.CharField(choices=media_type_choices, max_length=20)
     project = models.ForeignKey('Project', null=True, blank=True)
     image = models.ImageField(upload_to='%Y/images/')
-    thumbnail = models.ImageField(upload_to='%Y/thumbnails/', null=True, blank=True)
+    thumbnail = ImageSpecField(source='image',
+        processors=[ResizeToFill(200, 200)],
+        format='JPEG',
+        options={'quality': 75})
     video_embed_code = models.TextField(null=True, blank=True)
     url = models.URLField(max_length=300, null=True, blank=True)
     audio_file = models.FileField(upload_to='%Y/audio/', null=True, blank=True)

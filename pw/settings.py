@@ -138,7 +138,7 @@ INSTALLED_APPS = (
     'south',
     'storages',
     'bootstrap3',
-    'sorl.thumbnail',
+    'imagekit',
     # MODEL APPS:
     'gallery',
 )

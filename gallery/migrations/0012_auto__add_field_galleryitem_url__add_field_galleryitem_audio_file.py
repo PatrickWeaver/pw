@@ -8,6 +8,9 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
+        # Deleting field 'GalleryItem.thumbnail'
+        db.delete_column(u'gallery_galleryitem', 'thumbnail')
+
         # Adding field 'GalleryItem.url'
         db.add_column(u'gallery_galleryitem', 'url',
                       self.gf('django.db.models.fields.URLField')(max_length=300, null=True, blank=True),
@@ -20,6 +23,11 @@ class Migration(SchemaMigration):
 
 
     def backwards(self, orm):
+        # Adding field 'GalleryItem.thumbnail'
+        db.add_column(u'gallery_galleryitem', 'thumbnail',
+                      self.gf('django.db.models.fields.files.ImageField')(max_length=100, null=True, blank=True),
+                      keep_default=False)
+
         # Deleting field 'GalleryItem.url'
         db.delete_column(u'gallery_galleryitem', 'url')
 
@@ -36,7 +44,6 @@ class Migration(SchemaMigration):
             'media_type': ('django.db.models.fields.CharField', [], {'max_length': '20'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'project': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['gallery.Project']", 'null': 'True', 'blank': 'True'}),
-            'thumbnail': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
             'url': ('django.db.models.fields.URLField', [], {'max_length': '300', 'null': 'True', 'blank': 'True'}),
             'video_embed_code': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'})
         },
