@@ -5,10 +5,12 @@
     {% block title %}
     {% endblock %}
     </title>
-
     {% load bootstrap3 %}
+    {% load staticfiles %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
+
+    <link rel="stylesheet" type="text/css" href="{% static "style.css" %}">    
 </head>
 
 <body>

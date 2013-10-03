@@ -1,5 +1,12 @@
 body {
-	background-color: yellow;
+	background-color: none;
 }
 
 
+.thumbnail {
+    border: none;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+
+ }
