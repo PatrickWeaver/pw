@@ -8,12 +8,16 @@
 
 <h2>Projects:</h2>
 
-<ul>
-    {% for project in projects %}
-        <li>
-            <a href="{% url 'gallery.views.project' project.id %}">{{ project.name }}{% if project.year %} - {{ project.year }}{% endif %}</a>
-        </li>
-    {% endfor %}
-</ul>
+{% if projects %}
+    <ul>
+        {% for project in projects %}
+            <li>
+                <a href="{% url 'gallery.views.project' project.id %}">{{ project.name }}{% if project.year %} - {{ project.year }}{% endif %}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+
 
 {% endblock %}
