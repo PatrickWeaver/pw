@@ -10,12 +10,14 @@
     {% bootstrap_css %}
     {% bootstrap_javascript %}
 
-    <link rel="stylesheet" type="text/css" href="{% static "style.css" %}">    
+    <link rel="stylesheet" type="text/css" href="{% static "/static/style.css" %}">    
 </head>
 
 <body>
-    <h1>Patrick Weaver</h1>
-    <ul>
+<div id="container">
+<div id="header">
+    <h1 id="title">Patrick Weaver</h1>
+    <ul id="menu">
         <li>
             <a href="{% url 'gallery.views.home' %}">Home</a>
         </li>
@@ -26,10 +28,14 @@
             <a href="{% url 'admin:index' %}">Admin</a>
         </li>
     </ul>
+</div>
+</div>
+<div id="content">
     {% block section %}
 
     {% endblock %}
 
+</div>
 </body>
 
 </html>
