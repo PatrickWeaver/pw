@@ -6,11 +6,23 @@
 
 {% block content %}
 <h2><a href="{% url 'gallery.views.project' project.id %}">{{ project.name }}</a>:</h2><br>
-<h3>{{ gallery_item.name }}:</h3><br>
-
+<h3>{{ gallery_item.name }}:</h3>
+{% if media_type == "Internet" %}
+    <a href="{{ url }}">{{ url }}</a>
+{% endif %}
+<br><br>
     {% if gallery_item %}
-
-        <a href="{{ gallery_item.image.url }}"><img src="{{ gallery_item.image.url }}"></a>
+        <div class="wide_image_container">
+            <a href=
+            {% if media_type == "Internet" %}
+                "{{ url }}" target="blank"
+            {% else %}
+                "{{ gallery_item.image.url }}"
+            {% endif %}
+            ><img src="{{ gallery_item.image.url }}" class="{% if media_type == "Internet" %}
+                    internet
+                {% endif %} gallery_image"></a>
+        </div>
 
     {% endif %}
 
