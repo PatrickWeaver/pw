@@ -120,8 +120,8 @@ ROOT_URLCONF = 'pw.urls'
 WSGI_APPLICATION = 'pw.wsgi.application'
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates'),
-    os.path.join(BASE_DIR, 'gallery/templates')
+    os.path.join(BASE_DIR, '../templates/'),
+    os.path.join(BASE_DIR, '../gallery/templates/')
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
