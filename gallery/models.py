@@ -6,6 +6,7 @@ from imagekit.processors import ResizeToFit, ResizeToFill
 class Project(models.Model):
     name = models.CharField(max_length=100)
     year = models.IntegerField(null=True, blank=True)
+    caption = models.TextField(null=True, blank=True)
 
     def __unicode__(self):
         if self.year:
@@ -35,6 +36,7 @@ class GalleryItem(models.Model):
         processors=[ResizeToFill(200, 200)],
         format='JPEG',
         options={'quality': 75})
+    caption = models.TextField(null=True, blank=True)
     video_embed_code = models.TextField(null=True, blank=True)
     url = models.URLField(max_length=300, null=True, blank=True)
     audio_file = models.FileField(upload_to='%Y/audio/', null=True, blank=True)

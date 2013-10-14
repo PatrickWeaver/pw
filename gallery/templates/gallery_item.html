@@ -5,16 +5,23 @@
 {% endblock %}
 
 {% block content %}
-<h2><a href="{% url 'gallery.views.project' project.id %}">{{ project.name }}</a>:</h2><br>
+<h2>
+    <a href="{% url 'gallery.views.project' project.id %}">{{ project.name }}{% if project.year > 0 %}
+             - {{ project.year }}
+        {% endif %}</a>:
+</h2>
+<br>
 <h3>{{ gallery_item.name }}:</h3>
-{% if media_type == "Internet" %}
+{% if url %}
     <a href="{{ url }}">{{ url }}</a>
+{% elif  gallery_item.caption %}
+    {{ gallery_item.caption }}
 {% endif %}
 <br><br>
     {% if gallery_item %}
         <div class="wide_image_container">
             <a href=
-            {% if media_type == "Internet" %}
+            {% if url %}
                 "{{ url }}" target="blank"
             {% else %}
                 "{{ gallery_item.image.url }}"
