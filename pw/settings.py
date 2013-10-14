@@ -84,6 +84,7 @@ STATICFILES_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     '/home/sites/pw/gallery/static/',
+    '/home/sites/pw/pw/static/'
 )
 
 # List of finder classes that know how to find static files in
@@ -192,11 +193,12 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['*']
 
 # Static asset configuration
-STATIC_ROOT = 'staticfiles'
-STATIC_URL = '/static/'
+STATIC_ROOT = '/static/'
+STATIC_URL = 'S3_URL' + STATIC_ROOT
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
