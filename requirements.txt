@@ -10,7 +10,7 @@ dj-static==0.0.5
 django-appconf==0.6
 django-bootstrap3==0.0.7
 django-imagekit==3.0.4
-django-storages==1.1.8
+django-storages==1.1.5
 django-toolbelt==0.0.1
 easy-thumbnails==1.4
 gunicorn==18.0
