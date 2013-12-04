@@ -25,17 +25,19 @@
     </div>
     </div>
     </div>
+    <div id="menu-container">
     <ul id="menu">
-        <li>
-            <a href="{% url 'gallery.views.home' %}">Home</a>
-        </li>
-        <li>
-            <a href="{% url 'gallery.views.projects' %}">Projects</a>
-        </li>
-        <li>
-            <a href="{% url 'admin:index' %}">Admin</a>
-        </li>
+        <a href="{% url 'gallery.views.home' %}"><li class="home-menu">
+            Home
+        </li></a>
+        <a href="{% url 'gallery.views.projects' %}"><li class="projects-menu">
+            Projects
+        </li></a>
+        <a href="{% url 'admin:index' %}"><li  class="admin-menu">
+            Admin
+        </li></a>
     </ul>
+    </div>
 </div>
 </div>
 <div id="content">

@@ -1,0 +1,14 @@
+{% extends "gallery_base.html" %}
+
+{% block title %}
+ - {{ project.name }} - {{ gallery_item.name }}
+{% endblock %}
+
+{% block content %}
+
+<div id="gallery_item_image_container">
+    <img src="{{ gallery_item.image.url }}" class="gallery_item_image">
+</div>
+
+
+{% endblock %}

@@ -2,74 +2,105 @@ body {
 	background-color: none;
 }
 
+body a:hover{
+    text-decoration: none;
+}
+
 #header {
     position: fixed;
     top: 0;
-    background-color: WhiteSmoke;
+    background-color: whitesmoke;
     width: 100%;
-    height: 12.5em;
+    height: 84px;
     z-index: 9999;
     padding: 0 10px;
 }
 
 #ti-1 {
-    border: 2px solid slateblue;
+    border: 1px solid slateblue;
     float: left;
-    padding: 2px;
+    padding: 1px;
     background-color: blueviolet;
     border-radius: 15px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
+    z-index: 1;
 
 }
 
 #ti-2 {
-    border: 2px solid darkviolet;
+    border: 1px solid darkviolet;
     float: left;
-    padding: 2px;
+    padding: 1px;
     background-color: darkslateblue;
     border-radius: 15px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
+    z-index: 1;
 }
 
 #ti-3 {
-    border: 2px solid dimgray;
+    border: 1px solid dimgray;
     float: left;
-    padding: 2px;
+    padding: 1px;
     background-color: mediumaquamarine;
     border-radius: 15px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
+    z-index: 1;
 }
 
 #ti-4 {
-    border: 2px solid turquoise;
+    border: 1px solid turquoise;
     float: left;
-    padding: 2px;
+    padding: 1px;
     background-color: cyan;
     border-radius: 15px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
+    z-index: 1;
 }
 
 
 #title-image {
     float: left;
-    height: 10em;
+    height: 4em;
     width: auto;
     border-radius: 15px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
+    z-index: 1;
+}
+
+#menu-container {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
 }
 
 #menu {
-    margin-top: 2.5em;
-    float: left;
+    list-style-type: none;
+    width: 100%;
+    z-index: 2;
+}
+
+.home-menu:hover{
+    background-color: pink;
+
+}
+.projects-menu:hover{
+    background-color: salmon;
+
+}
+.admin-menu:hover{
+    background-color: lightcoral;
+
 }
 
 #menu li{
-    display: inline;
+    float: left;
+    width: 100%;
+    margin-left: 75px;
 }
 
 #container{
@@ -78,10 +109,10 @@ body {
 }
 
 #content {
-    margin-top: 12.5em;
+    margin: 94px 0 10px;
     float: left;
     padding: 0 10px 10px 10px;
-    margin-bottom: 10px;
+    width: 100%;
 }
 
 
@@ -109,6 +140,21 @@ body {
     margin: 0 auto;
  }
 
+#gallery_item_image_container {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    
+ }
+
+ .gallery_item_image {
+    height:auto;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    padding: 40px;
+ }
+
 .wide_image_container{
     width: 100%;
     position: absolute;
@@ -132,3 +178,216 @@ img.gallery_image {
  #clear {
     clear: both;
  }
+
+ #home-container-container{
+    float:right;
+    position:relative;
+    left:-50%;
+    text-align:left;
+ }
+
+ #home-container{
+    position: relative;
+    text-align: center;
+    left: 50%;
+ }
+
+ #home-image-container{
+    float: left;
+ }
+
+ #ti-1-home {
+    border: 4px solid slateblue;
+    float: left;
+    padding: 4px;
+    background-color: blueviolet;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    z-index: 1;
+
+}
+
+#ti-2-home {
+    border: 4px solid darkviolet;
+    float: left;
+    padding: 4px;
+    background-color: darkslateblue;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    z-index: 1;
+}
+
+#ti-3-home {
+    border: 4px solid dimgray;
+    float: left;
+    padding: 4px;
+    background-color: mediumaquamarine;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    z-index: 1;
+}
+
+#ti-4-home {
+    border: 4px solid turquoise;
+    float: left;
+    padding: 4px;
+    background-color: cyan;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    z-index: 1;
+}
+
+
+#title-image-home {
+    float: left;
+    height: 450px;
+    width: auto;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    z-index: 1;
+}
+
+#home-menu-container{
+    float: left;
+    font-size: 400%;
+}
+
+#homepage-menu {
+    list-style-type: none;
+    z-index: 2;
+}
+
+#homepage-menu li{
+    float: right;
+    text-align: right;
+    border: 2px dashed red;
+    margin-left: 15px;
+}
+
+.home-menu-div{
+    width: 100%;
+}
+
+
+#home-home-menu:hover{
+    background-color: pink;
+
+}
+#home-projects-menu:hover{
+    background-color: salmon;
+
+}
+#home-admin-menu:hover{
+    background-color: lightcoral;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+ #z-home-container-container{
+    float:right;
+    position:relative;
+    left:-50%;
+    text-align:left;
+ }
+
+ #z-home-container{
+    position: relative;
+    text-align: center;
+    left: 50%;
+ }
+
+  #z-home-img{
+    float: left;
+    z-index: 10;
+ }
+
+#z-ti-1 {
+    border: 4px solid slateblue;
+    padding: 4px;
+    background-color: blueviolet;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    z-index: 11;
+    position: relative;
+
+}
+
+#z-ti-2 {
+    border: 4px solid darkviolet;
+    padding: 4px;
+    background-color: darkslateblue;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+
+}
+
+#z-ti-3 {
+    border: 4px solid dimgray;
+    padding: 4px;
+    background-color: mediumaquamarine;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+}
+
+#z-ti-4 {
+    border: 4px solid turquoise;
+    padding: 4px;
+    background-color: cyan;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+}
+
+
+#z-title-image {
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+}
+
+ #z-home-menu{
+    float: left;
+ }
+
+ #z-home-menu-con{
+    list-style-type: none;
+    font-size: 400%;
+    text-align: right;
+    height: 100%;
+
+ }
+
+ #z-wh{
+    position: relative;
+    height: 100%;
+    border: 1px solid green;
+ }
+
+ #z-home-menu-it{
+    border: 0px dashed red;
+    padding: 0 25px 0 85px;
+    position: relative;
+    right: 50px;
+    z-index: 10;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+ }
+

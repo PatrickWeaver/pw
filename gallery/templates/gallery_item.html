@@ -20,15 +20,11 @@
 <br><br>
     {% if gallery_item %}
         <div class="wide_image_container">
-            <a href=
-            {% if url %}
-                "{{ url }}" target="blank"
+            {% if media_type == "Internet" %}
+                <a href="{{ url }}" target="blank"><img src="{{ gallery_item.image.url }}" class="internet gallery_image"></a>
             {% else %}
-                "{{ gallery_item.image.url }}"
+                <a href="{% url 'gallery.views.gallery_item_image' project.id gallery_item.id %}"><img src="{{ gallery_item.image.url }}" class="gallery_image"></a>
             {% endif %}
-            ><img src="{{ gallery_item.image.url }}" class="{% if media_type == "Internet" %}
-                    internet
-                {% endif %} gallery_image"></a>
         </div>
 
     {% endif %}

@@ -4,6 +4,8 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 
+import re
+
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'pw.views.home', name='home'),
@@ -16,6 +18,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'gallery.views.home'),
     url(r'^projects/$', 'gallery.views.projects'),
-    url(r'^projects/(\d+)/$', 'gallery.views.project'),
-    url(r'^projects/(\d+)/(\d+)/$', 'gallery.views.gallery_item')
+    url(r'^projects/([^/]+)/$', 'gallery.views.project'),
+    url(r'^projects/([^/]+)/([^/]+)/$', 'gallery.views.gallery_item'),
+    url(r'^projects/([^/]+)/([^/]+)/image/$', 'gallery.views.gallery_item_image'),
 )

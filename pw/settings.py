@@ -193,12 +193,16 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['*']
 
 # Static asset configuration
-STATIC_ROOT = '/static/'
+"""STATIC_ROOT = '/static/'
 STATIC_URL = 'S3_URL' + STATIC_ROOT
+"""
+
+STATIC_ROOT = 'staticfiles'
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+#STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'

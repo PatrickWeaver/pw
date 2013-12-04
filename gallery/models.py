@@ -5,8 +5,10 @@ from imagekit.processors import ResizeToFit, ResizeToFill
 # Create your models here.
 class Project(models.Model):
     name = models.CharField(max_length=100)
+
     year = models.IntegerField(null=True, blank=True)
     caption = models.TextField(null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
 
     def __unicode__(self):
         if self.year:
@@ -14,9 +16,13 @@ class Project(models.Model):
         else:
             return self.name
 
+    def slug(self):
+        return slugify(self.name)
+
 
 class GalleryItem(models.Model):
     name = models.CharField(max_length=100)
+    rank = models.IntegerField(default=999)
 
     #media_type choices:
     image_media = 'Image'
