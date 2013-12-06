@@ -5,6 +5,7 @@ from imagekit.processors import ResizeToFit, ResizeToFill
 # Create your models here.
 class Project(models.Model):
     name = models.CharField(max_length=100)
+    rank = models.IntegerField(default=999)
 
     year = models.IntegerField(null=True, blank=True)
     caption = models.TextField(null=True, blank=True)

@@ -12,7 +12,8 @@ def home(request):
 
 def projects(request):
     projects = Project.objects.all()
-    return render(request, 'projects.html', {'projects': projects})
+    projects_sorted = sorted(projects, key=operator.attrgetter('rank'))
+    return render(request, 'projects.html', {'projects': projects_sorted})
 
 def project(request, project_id):
     project = Project.objects.get(pk=project_id)
@@ -20,8 +21,8 @@ def project(request, project_id):
     gallery_items_sorted = sorted(gallery_items, key=operator.attrgetter('rank'))
     # Single gallery item projects go straight to galery item.
     if len(gallery_items) == 1:
-        gallery_item_name = gallery_items_sorted[0].name
-        return HttpResponseRedirect(reverse('gallery.views.gallery_item', args=[project_name, gallery_item_name,]))
+        gallery_item_id = gallery_items_sorted[0].id
+        return HttpResponseRedirect(reverse('gallery.views.gallery_item', args=[project_id, gallery_item_id,]))
     # Multiple gallery item or empty projects go to list of gallery items.
     else:
         return render(request, 'project.html', {'project': project, 'gallery_items': gallery_items_sorted,})

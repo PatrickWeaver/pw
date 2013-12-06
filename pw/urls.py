@@ -16,8 +16,8 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', 'gallery.views.home'),
-    url(r'^projects/$', 'gallery.views.projects'),
+    url(r'^$', 'gallery.views.projects'),
+    #url(r'^projects/$', 'gallery.views.projects'),
     url(r'^projects/([^/]+)/$', 'gallery.views.project'),
     url(r'^projects/([^/]+)/([^/]+)/$', 'gallery.views.gallery_item'),
     url(r'^projects/([^/]+)/([^/]+)/image/$', 'gallery.views.gallery_item_image'),

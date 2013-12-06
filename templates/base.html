@@ -10,7 +10,13 @@
     {% bootstrap_css %}
     {% bootstrap_javascript %}
 
-    <link rel="stylesheet" type="text/css" href="{% static "style.css" %}">    
+    <link rel="stylesheet" type="text/css" href="{% static "style.css" %}">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script type='text/javascript' src="{% static "/static/script.js" %}">
+    </script>
+    <script type='text/javascript' src="{% static "/static/random_color.js" %}">
+    </script> 
 </head>
 
 <body>
@@ -26,16 +32,20 @@
     </div>
     </div>
     <div id="menu-container">
-    <ul id="menu">
-        <a href="{% url 'gallery.views.home' %}"><li class="home-menu">
+    <ul id="menu" class="hsrbc">
+        {% comment %}
+        <a href="{% url 'gallery.views.home' %}"><li class="home-menu hover_random_background_color">
             Home
         </li></a>
-        <a href="{% url 'gallery.views.projects' %}"><li class="projects-menu">
+        {% endcomment %}
+        <a href="{% url 'gallery.views.projects' %}"><li class="projects-menu hover_random_background_color">
             Projects
         </li></a>
-        <a href="{% url 'admin:index' %}"><li  class="admin-menu">
+        {% comment %}
+        <a href="{% url 'admin:index' %}"><li  class="admin-menu hover_random_background_color">
             Admin
         </li></a>
+        {% endcomment %}
     </ul>
     </div>
 </div>
@@ -49,5 +59,4 @@
 <div id="clear">
 </div>
 </body>
-
 </html>
