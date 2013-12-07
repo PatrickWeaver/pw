@@ -9,7 +9,7 @@
 {% if projects %}
     <ul class="big_plain_list srbc srhbc">
         {% for project in projects %}
-            <a href="{% url 'gallery.views.project' project.id %}">
+            <a href="{% url 'gallery.views.project' project.slug %}">
                 <li class="random_background_color random_hover_border_color">
                     {{ project.name }}{% if project.year %} - {{ project.year }}{% endif %}
                 </li>

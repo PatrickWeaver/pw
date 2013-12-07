@@ -12,24 +12,25 @@ def home(request):
 
 def projects(request):
     projects = Project.objects.all()
-    projects_sorted = sorted(projects, key=operator.attrgetter('rank'))
-    return render(request, 'projects.html', {'projects': projects_sorted})
 
-def project(request, project_id):
-    project = Project.objects.get(pk=project_id)
+    projects_sorted = sorted(projects, key=operator.attrgetter('rank'))
+    return render(request, 'projects.html', {'projects': projects_sorted,})
+
+def project(request, project_slug):
+    project = Project.objects.get(slug=project_slug)
     gallery_items = GalleryItem.objects.filter(project=project.id)
     gallery_items_sorted = sorted(gallery_items, key=operator.attrgetter('rank'))
     # Single gallery item projects go straight to galery item.
     if len(gallery_items) == 1:
-        gallery_item_id = gallery_items_sorted[0].id
-        return HttpResponseRedirect(reverse('gallery.views.gallery_item', args=[project_id, gallery_item_id,]))
+        gallery_item_slug = gallery_items_sorted[0].slug
+        return HttpResponseRedirect(reverse('gallery.views.gallery_item', args=[project_slug, gallery_item_slug,]))
     # Multiple gallery item or empty projects go to list of gallery items.
     else:
         return render(request, 'project.html', {'project': project, 'gallery_items': gallery_items_sorted,})
 
-def gallery_item(request, project_id, gallery_item_id):
-    project = Project.objects.get(pk=project_id)
-    gallery_item = GalleryItem.objects.get(pk=gallery_item_id)
+def gallery_item(request, project_slug, gallery_item_slug):
+    project = Project.objects.get(slug=project_slug)
+    gallery_item = GalleryItem.objects.get(slug=gallery_item_slug)
     media_type = str(gallery_item.media_type)
     if media_type == "Internet":
         url = gallery_item.url

@@ -5,20 +5,26 @@
 {% endblock %}
 
 {% block content %}
-<h2>{{ project.name }}:</h2>
+<h2>{{ project.name }}</h2>
 <p>{{ project.caption }}</p>
     {% if gallery_items %}
         {% for item in gallery_items %}
             <div class="gallery_item">
-            <a href="{% url 'gallery.views.gallery_item' project.id item.id %}">{{ item.name }}</a>
-            <br>
-            <a href="{% url 'gallery.views.gallery_item' project.id item.id %}" class="thumbnail_link"><img src="
-            {% if item.thumbnail %}
-                {{ item.thumbnail.url }}
-            {% else %}
-                {{ item.image.url }}
-            {% endif %}
-            " width="200" height="200" class="thumbnail"></a><br><br>
+                <div class="project_title_link">
+                    <a href="{% url 'gallery.views.gallery_item' project.slug item.slug %}">{{ item.name }}
+                    </a>
+                </div>
+                <br>
+                <a href="{% url 'gallery.views.gallery_item' project.slug item.slug %}" class="thumbnail_link">
+                    <img src="
+                    {% if item.thumbnail %}
+                        {{ item.thumbnail.url }}
+                    {% else %}
+                        {{ item.image.url }}
+                    {% endif %}
+                    " width="200" height="200" class="thumbnail">
+                </a>
+                <br><br>
             </div>
         {% endfor %}
     {% endif %}

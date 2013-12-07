@@ -2,9 +2,11 @@ from django.db import models
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFit, ResizeToFill
 
+
 # Create your models here.
 class Project(models.Model):
     name = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100)
     rank = models.IntegerField(default=999)
 
     year = models.IntegerField(null=True, blank=True)
@@ -17,13 +19,11 @@ class Project(models.Model):
         else:
             return self.name
 
-    def slug(self):
-        return slugify(self.name)
-
 
 class GalleryItem(models.Model):
     name = models.CharField(max_length=100)
     rank = models.IntegerField(default=999)
+    slug = models.SlugField(max_length=100)
 
     #media_type choices:
     image_media = 'Image'

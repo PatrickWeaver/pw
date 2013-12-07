@@ -89,8 +89,9 @@ for (var i = 1; i <= numberOfBoxes * 5; i++) {
     randomColors[i] = randomColor.get(true);
 }
 
-$("ul.srbc").children("a").children("li.random_background_color").addClass("set_random_background_color");
-$("ul.srhbc").children("a").children("li.random_hover_border_color").addClass("set_random_hover_border_color");
+$(".srbc").children().children(".random_background_color").addClass("set_random_background_color");
+$(".srhbc").children("a").children(".random_hover_border_color").addClass("set_random_hover_border_color");
+$(".srhbc-b").children("a").children(".random_hover_border_color_bottom").addClass("set_random_hover_border_color_bottom");
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 //2nd For Loop:
 
@@ -116,6 +117,8 @@ $('.set_random_background_color').hover(function(){
     });
 });
 
+
+
 var counter3 = numberOfBoxes * 3;
 $('.set_random_hover_border_color').hover(function(){
     $(this).css("border", function(){
@@ -129,6 +132,23 @@ $('.set_random_hover_border_color').hover(function(){
 },  function(){
     $(this).css({'border':'5px solid black'});
 } );
+
+// Bottom border:
+
+var counter4 = numberOfBoxes * 3;
+$('.set_random_hover_border_color_bottom').hover(function(){
+    $(this).css("border", function(){
+
+        if (counter4 > (numberOfBoxes * 5)-1) {
+            counter4 = (numberOfBoxes * 3);
+        }
+        counter4 += 1;
+        return "solid 2px " + randomColors[counter4];
+    });
+},  function(){
+    $(this).css({'border':'2px solid black'});
+} );
+
 
 //===========================================================================
 //===========================================================================
@@ -171,6 +191,8 @@ $('.hover_set_random_background_color').hover(function(){
 }, function(){
     $(this).css({'background-color': hover_ul_bg_color});
 });
+
+
 
 } );
 

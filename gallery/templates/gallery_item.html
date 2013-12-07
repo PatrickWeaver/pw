@@ -6,12 +6,12 @@
 
 {% block content %}
 <h2>
-    <a href="{% url 'gallery.views.project' project.id %}">{{ project.name }}{% if project.year > 0 %}
+    <a href="{% url 'gallery.views.project' project.slug %}">{{ project.name }}{% if project.year > 0 %}
              - {{ project.year }}
         {% endif %}</a>:
 </h2>
 <br>
-<h3>{{ gallery_item.name }}:</h3>
+<h3>{{ gallery_item.name }}</h3>
 {% if url %}
     <a href="{{ url }}">{{ url }}</a>
 {% elif  gallery_item.caption %}
@@ -23,7 +23,7 @@
             {% if media_type == "Internet" %}
                 <a href="{{ url }}" target="blank"><img src="{{ gallery_item.image.url }}" class="internet gallery_image"></a>
             {% else %}
-                <a href="{% url 'gallery.views.gallery_item_image' project.id gallery_item.id %}"><img src="{{ gallery_item.image.url }}" class="gallery_image"></a>
+                <a href="{% url 'gallery.views.gallery_item_image' project.slug gallery_item.slug %}"><img src="{{ gallery_item.image.url }}" class="gallery_image"></a>
             {% endif %}
         </div>
 

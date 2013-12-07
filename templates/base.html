@@ -11,6 +11,7 @@
     {% bootstrap_javascript %}
 
     <link rel="stylesheet" type="text/css" href="{% static "style.css" %}">
+    <link rel="shortcut icon" href="{% static "favicon.ico" %}" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
     </script>
     <script type='text/javascript' src="{% static "/static/script.js" %}">
@@ -22,6 +23,7 @@
 <body>
 <div id="container">
 <div id="header">
+    <!--
     <div id="ti-1">
     <div id="ti-2">
     <div id="ti-3">
@@ -31,21 +33,26 @@
     </div>
     </div>
     </div>
+    -->
     <div id="menu-container">
-    <ul id="menu" class="hsrbc">
+    <ul id="menu" class="srbc srhbc-b">
         {% comment %}
         <a href="{% url 'gallery.views.home' %}"><li class="home-menu hover_random_background_color">
             Home
         </li></a>
-        {% endcomment %}
+        
         <a href="{% url 'gallery.views.projects' %}"><li class="projects-menu hover_random_background_color">
             Projects
-        </li></a>
-        {% comment %}
+        </li></a>m_hover_border_color_bottom
+        
         <a href="{% url 'admin:index' %}"><li  class="admin-menu hover_random_background_color">
             Admin
         </li></a>
         {% endcomment %}
+
+        <a href="{% url 'gallery.views.projects' %}"><li class="home-menu random_background_color random_hover_border_color_bottom">
+            Patrick ⁂ Weaver
+        </li></a>
     </ul>
     </div>
 </div>
