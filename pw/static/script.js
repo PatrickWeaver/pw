@@ -130,7 +130,7 @@ $('.set_random_hover_border_color').hover(function(){
         return "solid 5px " + randomColors[counter3];
     });
 },  function(){
-    $(this).css({'border':'5px solid black'});
+    $(this).css({'border':'5px solid white'});
 } );
 
 // Bottom border:
@@ -146,7 +146,7 @@ $('.set_random_hover_border_color_bottom').hover(function(){
         return "solid 2px " + randomColors[counter4];
     });
 },  function(){
-    $(this).css({'border':'2px solid black'});
+    $(this).css({'border':'2px solid white'});
 } );
 
 
@@ -192,7 +192,38 @@ $('.hover_set_random_background_color').hover(function(){
     $(this).css({'background-color': hover_ul_bg_color});
 });
 
+//===========================================================================
+//===========================================================================
 
+//Static Background color:
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+//Count Boxes:
+var static_list_items = []
+static_list_items = $('.static_random_background_color');
+var staticNumberOfBoxes = static_list_items.length;
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//For Loop:
+
+var staticRandomColors = [];
+var static_counter = 0
+for (var i = 1; i <= staticNumberOfBoxes * 3; i++) {
+    var staticRandomColor = new RColor;
+    static_counter += 1
+    staticRandomColors[i] = staticRandomColor.get(true);
+}
+
+$(".strbc").children(".static_random_background_color").addClass("static_set_random_background_color");
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//2nd For Loop:
+var static_counter2 = 0;
+$('.static_set_random_background_color').css("background-color", function () {
+    static_counter2 += 1;
+    return staticRandomColors[static_counter2];
+});
+
+$( ".static_random_background_color" ).append( staticRandomColors[0] );
 
 } );
 

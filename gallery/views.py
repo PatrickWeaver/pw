@@ -3,7 +3,7 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.conf import settings
-from gallery.models import Project, GalleryItem
+from gallery.models import Project, GalleryItem, ExternalLink
 
 import operator
 
@@ -12,9 +12,12 @@ def home(request):
 
 def projects(request):
     projects = Project.objects.all()
+    external_links = ExternalLink.objects.all()
 
     projects_sorted = sorted(projects, key=operator.attrgetter('rank'))
-    return render(request, 'projects.html', {'projects': projects_sorted,})
+    external_links_sorted = sorted(external_links, key=operator.attrgetter('rank'))
+
+    return render(request, 'projects.html', {'projects': projects_sorted, 'external_links': external_links_sorted,})
 
 def project(request, project_slug):
     project = Project.objects.get(slug=project_slug)

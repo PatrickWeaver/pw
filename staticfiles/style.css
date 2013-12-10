@@ -1,10 +1,53 @@
 body {
 	background-color: none;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 body a:hover{
     text-decoration: none;
 }
+
+#social-media-links {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: left;
+}
+
+#social-media-links ul{
+    list-style: none;
+    padding: 0;
+}
+
+#social-media-links ul a{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}
+
+#social-media-links ul a li{
+    display: inline;
+    height: 100%;
+    list-style-type: none;
+    padding: 0;
+
+}
+
+#social-media-links ul a li img{
+    width: 32px;
+    height: 32px;
+    -webkit-border-bottom-right-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+#social-media-links ul a li img:hover{
+    background-color: grey !important;
+}
+
 
 #header {
     position: fixed;
@@ -98,12 +141,13 @@ body a:hover{
 .big_plain_list {
     font-size: 300%;
     list-style: none;
+    text-transform:uppercase;
 }
 
 .big_plain_list li {
-    margin: 10px 20% 10px 20%;
+    margin: 2px 20% 2px 20%;
     border-radius: 2px;
-    -webkit-border-radius: 2px;
+    -webkit-border-radius: zpx;
     -moz-border-radius: 2px;
 }
 
@@ -113,11 +157,11 @@ body a:hover{
 }
 
 .set_random_hover_border_color {
-    border: 5px solid black;
+    border: 5px solid white;
 }
 
 .set_random_hover_border_color_bottom {
-    border: 2px solid black;
+    border: 2px solid white;
     border-top: 0px !important;
     -webkit-border-bottom-right-radius: 2px;
     -webkit-border-bottom-left-radius: 2px;
@@ -156,6 +200,58 @@ body a:hover{
 }
 
 
+/*+++++++++++++++++++++++++++++++++++++++++*/
+/*Project*/
+
+.project-header {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 5px;
+    -webkit-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border-radius: 3px;
+    padding: .25em;
+    text-transform: uppercase;
+    font-size: 175%;
+}
+
+.project-link {
+    text-align: center;
+    font-size: 125%;
+    width: 100%;
+    margin-bottom: 2.5em;
+    -webkit-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border-radius: 3px;
+}
+
+.project-link a{
+    color: #585858 ;
+}
+
+.project-link a:hover {
+    color: #888888;
+}
+
+
+
+
+
+
+
+
+/*+++++++++++++++++++++++++++++++++++++++++*/
+/*Gallery Item*/
+
+
+
+
 
 
  .gallery_item {
@@ -168,7 +264,7 @@ body a:hover{
 
 
 .project_title_link {
-    height: 3em;
+    height: 2.5em;
     position: relative;
 }
 
@@ -182,6 +278,20 @@ body a:hover{
     color: black;
 }
 
+.project_title_link a div {
+    position: relative;
+    height: 2.5em;
+}
+
+.project_title_link a div div {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    height:auto;
+
+}
+
 .project_title_link a:hover {
     color: grey;
 }
@@ -191,7 +301,7 @@ body a:hover{
     border-radius: 15px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
-    margin: 0 auto;
+    margin: -1em auto 0;
  }
 
  img.thumbnail:hover{

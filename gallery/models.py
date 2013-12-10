@@ -13,6 +13,10 @@ class Project(models.Model):
     caption = models.TextField(null=True, blank=True)
     description = models.TextField(null=True, blank=True)
 
+    url = models.URLField(max_length=300, null=True, blank=True)
+    url_label = models.CharField(max_length=200, null=True, blank=True)
+
+
     def __unicode__(self):
         if self.year:
             return u'%s - %s' %(self.name, self.year)
@@ -50,3 +54,13 @@ class GalleryItem(models.Model):
 
     def __unicode__(self):
         return self.name
+
+class ExternalLink(models.Model):
+    name = models.CharField(max_length=100)
+    rank = models.IntegerField(default=999)
+
+    url = models.URLField(max_length=300)
+
+
+    def __unicode__(self):
+            return self.name

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from gallery.models import GalleryItem, Project
+from gallery.models import GalleryItem, Project, ExternalLink
 
 class ProjectAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
@@ -10,3 +10,4 @@ class GalleryItemAdmin(admin.ModelAdmin):
 
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(GalleryItem, GalleryItemAdmin)
+admin.site.register(ExternalLink)

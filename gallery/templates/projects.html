@@ -16,7 +16,17 @@
             </a>
         {% endfor %}
     </ul>
-<div id="append"></div>
+{% endif %}
+{% if external_links %}
+    <ul class="big_plain_list srbc srhbc">
+        {% for link in external_links %}
+            <a href="{{ link.url }}">
+                <li class="random_background_color random_hover_border_color">
+                    {{ link.name }}
+                </li>
+            </a>
+        {% endfor %}
+    </ul>
 {% endif %}
 
 
