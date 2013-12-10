@@ -26,7 +26,9 @@
         {{ gallery_item.name }}
     </h3>
 {% if url %}
-    <a href="{{ url }}">{{ url }}</a>
+    <p class="gallery-item-url">
+        <a href="{{ url }}">{{ url }}</a>
+    </p>
 {% endif %}
 </div>
 <br>
@@ -46,9 +48,9 @@
                         <img src="{{ gallery_item.image.url }}" class="gallery_image">
                     </a>
                 {% endif %}
-                <br><br>
+                
             {% endif %}
-            
+            <br><br>
             <p class="gallery_caption">
                 {% if  gallery_item.caption %}
                     {{ gallery_item.caption }}

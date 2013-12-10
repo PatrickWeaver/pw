@@ -269,6 +269,12 @@ body a:hover{
     padding-top: .5em;
  }
 
+ .gallery-item-url {
+    text-align: center;
+    width: 100%;
+    font-size: 125%;
+ }
+
 
 .wide_image_container{
     width: 100%;
