@@ -38,7 +38,7 @@
                     <img src="
                     {% if item.thumbnail %}
                         {{ item.thumbnail.url }}
-                    {% else %}
+                    {% elif item.image.url %}
                         {{ item.image.url }}
                     {% endif %}
                     " width="200" height="200" class="thumbnail">
