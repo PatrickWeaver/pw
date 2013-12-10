@@ -178,7 +178,6 @@ body a:hover{
     color: black;
 }
 
-h2 a
 .project-link {
     text-align: center;
     font-size: 125%;
@@ -282,7 +281,7 @@ h2 a
     padding: 0 20px;
     height: auto;
     width: 100%;
-    max-width: 900px;
+    max-width: 500px;
 }
 
 .gallery_caption {
@@ -290,7 +289,7 @@ h2 a
     padding: 0 20px;
     height: auto;
     width: 100%;
-    max-width: 900px;
+    max-width: 500px;
     text-align: left;
 }
 
