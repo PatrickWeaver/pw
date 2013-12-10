@@ -30,12 +30,12 @@
 {% endif %}
 </div>
 <br>
-    {% if gallery_item %}
+    {% if gallery_item %}     
         <div class="wide_image_container">
             {% if media_type == "Internet" %}
                 <a href="{{ url }}" target="blank"><img src="{{ gallery_item.image.url }}" class="internet gallery_image"></a>
-            {% elif media_type == "Video" %}
-                {% elif gallery_item.video_embed_code %}
+            {% elif media_type == "Video" or "Music" %}
+                {% if gallery_item.video_embed_code %}
                     {% autoescape off %}
                         {{ gallery_item.video_embed_code }}
                     {% endautoescape %}
@@ -46,16 +46,17 @@
                         <img src="{{ gallery_item.image.url }}" class="gallery_image">
                     </a>
                 {% endif %}
-                 <br><br>
+                <br><br>
             {% endif %}
-        <p class="gallery_caption">
-            {% if  gallery_item.caption %}
-                {{ gallery_item.caption }}
-            {% endif %}
-        </p>
+            
+            <p class="gallery_caption">
+                {% if  gallery_item.caption %}
+                    {{ gallery_item.caption }}
+                {% endif %}
+            </p>
 
         </div>
-
+        
     {% endif %}
 
 
