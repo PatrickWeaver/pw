@@ -40,7 +40,9 @@
                         <img src="{{ gallery_item.image.url }}" class="gallery_image">
                     </a>
                 {% elif gallery_item.video_embed_code %}
-                    {{ gallery_item.video_embed_code }}
+                    {% autoescape off %}
+                        {{ gallery_item.video_embed_code }}
+                    {% endautoescape %}
                 {% endif %}
                  <br><br>
             {% endif %}
