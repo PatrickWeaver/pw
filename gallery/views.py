@@ -42,7 +42,7 @@ def gallery_item(request, project_slug, gallery_item_slug):
     return render(request, 'gallery_item.html', {'project': project, 'gallery_item': gallery_item, 'media_type': media_type, 'url': url,})
 
 
-def gallery_item_image(request, project_id, gallery_item_id):
-    project = Project.objects.get(pk=project_id)
-    gallery_item = GalleryItem.objects.get(pk=gallery_item_id)
+def gallery_item_image(request, project_slug, gallery_item_slug):
+    project = Project.objects.get(slug=project_slug)
+    gallery_item = GalleryItem.objects.get(slug=gallery_item_slug)
     return render(request, 'gallery_item_image.html', {'project': project, 'gallery_item': gallery_item,})

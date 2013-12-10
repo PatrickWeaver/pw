@@ -27,8 +27,6 @@
     </h3>
 {% if url %}
     <a href="{{ url }}">{{ url }}</a>
-{% elif  gallery_item.caption %}
-    {{ gallery_item.caption }}
 {% endif %}
 </div>
 <br>
@@ -39,6 +37,13 @@
             {% else %}
                 <a href="{% url 'gallery.views.gallery_item_image' project.slug gallery_item.slug %}"><img src="{{ gallery_item.image.url }}" class="gallery_image"></a>
             {% endif %}
+        <br><br>
+        <p class="gallery_caption">
+            {% if  gallery_item.caption %}
+                {{ gallery_item.caption }}
+            {% endif %}
+        </p>
+
         </div>
 
     {% endif %}

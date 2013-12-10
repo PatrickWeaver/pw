@@ -1,6 +1,7 @@
 body {
 	background-color: none;
     font-family: 'Source Sans Pro', sans-serif;
+    width: 100%;
 }
 
 body a:hover{
@@ -286,7 +287,6 @@ h2 a
 
 .wide_image_container{
     width: 100%;
-    position: absolute;
     text-align: center;
     z-index: 500;
 }
@@ -299,12 +299,16 @@ h2 a
     max-width: 900px;
 }
 
-img.gallery_image {
+.gallery_caption {
+    margin: 0 auto;
+    padding: 0 20px;
+    height: auto;
+    width: 100%;
+    max-width: 900px;
+    text-align: left;
 }
 
- .internet {
-    border: 3px dashed Gainsboro;
- }
+
 
  #clear {
     clear: both;
@@ -555,7 +559,7 @@ and (max-device-width : 568px) {
         -moz-border-radius: 0px;
     }
 
-    
+
     .gallery_item {
         width: 100%;
         text-align: center;
