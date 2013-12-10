@@ -18,7 +18,7 @@ body a:hover{
 /* Social Media Links */
 
 .social-media-links {
-    z-index: 999;
+    z-index: 5;
 }
 
 
@@ -73,14 +73,15 @@ body a:hover{
 #base-header {
     position: fixed;
     top: 0;
-    z-index: 3;
+    z-index: 12;
     padding: 0px;
     text-align: center;
-    width: 100%;
+    width: 20%;
+    margin: 0 40%;
 }
 
 #menu-container {
-    width: 10%;
+    width: 100%;
     text-align: center;
     margin: 0 auto;
     min-width: 200px;
@@ -270,21 +271,6 @@ h2 a
  }
 
 
-#gallery_item_image_container {
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    
- }
-
- .gallery_item_image {
-    height:auto;
-    max-width: 100%;
-    margin: 0 auto;
-    display: block;
-    padding: 40px;
- }
-
 .wide_image_container{
     width: 100%;
     text-align: center;
@@ -309,10 +295,60 @@ h2 a
 }
 
 
+/*_+_+_+_+_+_+_+_+_+_+_++_+_++_+_*/
+/* GALLERY ITEM IMAGE */
+
+#gallery_item_image_container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    background-color: black;
+    z-index: 10;
+    
+ }
+
+#blackout {
+    height: auto;
+    width: 100%;
+    background-color: black;
+    z-index: 11;
+}
+
+ .gallery_item_image {
+    height:auto;
+    max-width: 90%;
+    margin: 4em auto 0;
+    padding-bottom: 4em;
+    display: block;
+}
+
+#back-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.5em;
+    padding: .25em;
+    color: white;
+    z-index: 13;
+    font-size: 150%;
+}
+
+
+
+
+
+
+
+
+
 
  #clear {
     clear: both;
  }
+
 
 
 
@@ -369,6 +405,10 @@ h2 a
         border-bottom-right-radius: 0px;
         border-bottom-left-radius: 0px;
         }
+
+    #menu-container {
+        min-width: 140px !important;
+    }
 
     #menu li {
         font-size: 125%;
@@ -447,6 +487,16 @@ h2 a
         padding: 0 10px 10px 10px;
         width: 100%;
     }
+
+    #base-header {
+    width: 40% !important;
+    margin: 0 30% !important;
+    }
+
+    #menu-container {
+        min-width: 100px !important;
+    }
+
 
     #menu li {
         font-size: 75%;
