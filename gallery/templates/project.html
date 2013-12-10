@@ -34,15 +34,17 @@
                     <span>
 
                     </span>
-                    <a href="{% url 'gallery.views.gallery_item' project.slug item.slug %}" class="thumbnail_link">
-                    <img src="
-                    {% if item.thumbnail %}
-                        {{ item.thumbnail.url }}
-                    {% elif item.image.url %}
-                        {{ item.image.url }}
+                    {% if item.image %}
+                        <a href="{% url 'gallery.views.gallery_item' project.slug item.slug %}" class="thumbnail_link">
+                            <img src="
+                                {% if item.thumbnail %}
+                                    {{ item.thumbnail.url }}
+                                {% else %}
+                                    {{ item.image.url }}
+                                {% endif %}
+                            " width="200" height="200" class="thumbnail">
+                        </a>
                     {% endif %}
-                    " width="200" height="200" class="thumbnail">
-                </a>
                 <br><br>
             </div>
         {% endfor %}
