@@ -75,7 +75,7 @@ $(document).ready(function() {
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 //Count Boxes:
 var list_items = []
-list_items = $('li.random_background_color');
+list_items = $('.random_background_color');
 var numberOfBoxes = list_items.length;
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

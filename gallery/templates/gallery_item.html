@@ -5,19 +5,33 @@
 {% endblock %}
 
 {% block content %}
-<h2>
-    <a href="{% url 'gallery.views.project' project.slug %}">{{ project.name }}{% if project.year > 0 %}
-             - {{ project.year }}
-        {% endif %}</a>:
-</h2>
-<br>
-<h3>{{ gallery_item.name }}</h3>
+<div>
+    <a href="{% url 'gallery.views.project' project.slug %}" class="strbc">
+        <h2 class="project-header static_random_background_color">
+            {{ project.name }}
+        </h2>
+    </a>
+    {% if project.url %}
+        <div class="strbc">
+            <p class="static_random_background_color project-link">
+                <a href="{{ project.url }}">
+                    {{ project.url_label }}
+                </a>.
+            </p>
+        </div>
+    {% else %}
+        <p class="project-link"></p>
+    {% endif %}
+    <h3 class="gallery-item-name">
+        {{ gallery_item.name }}
+    </h3>
 {% if url %}
     <a href="{{ url }}">{{ url }}</a>
 {% elif  gallery_item.caption %}
     {{ gallery_item.caption }}
 {% endif %}
-<br><br>
+</div>
+<br>
     {% if gallery_item %}
         <div class="wide_image_container">
             {% if media_type == "Internet" %}
