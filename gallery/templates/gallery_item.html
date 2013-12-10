@@ -34,7 +34,7 @@
         <div class="wide_image_container">
             {% if media_type == "Internet" %}
                 <a href="{{ url }}" target="blank"><img src="{{ gallery_item.image.url }}" class="internet gallery_image"></a>
-            {% elif media_type == "Video" or "Music" %}
+            {% elif media_type == "Video" %}
                 {% if gallery_item.video_embed_code %}
                     {% autoescape off %}
                         {{ gallery_item.video_embed_code }}
