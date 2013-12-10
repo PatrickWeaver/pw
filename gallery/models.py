@@ -42,7 +42,7 @@ class GalleryItem(models.Model):
     )
     media_type = models.CharField(choices=media_type_choices, max_length=20)
     project = models.ForeignKey('Project', null=True, blank=True)
-    image = models.ImageField(upload_to='%Y/images/', null=True, blank=True)
+    image = models.ImageField(upload_to='%Y/images/%m%d%H/', null=True, blank=True)
     thumbnail = ImageSpecField(source='image',
         processors=[ResizeToFill(200, 200)],
         format='JPEG',
