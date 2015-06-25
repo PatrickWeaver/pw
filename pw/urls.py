@@ -17,7 +17,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^fingerpint', 'gallery.views.fingerprint'),
+    url(r'^fingerprint/', 'gallery.views.fingerprint'),
     url(r'^favicon.ico$', RedirectView.as_view(url='static/favicon.ico')),
     url(r'^$', 'gallery.views.projects'),
     #url(r'^projects/$', 'gallery.views.projects'),
