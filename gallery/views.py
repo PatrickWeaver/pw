@@ -46,3 +46,6 @@ def gallery_item_image(request, project_slug, gallery_item_slug):
     project = Project.objects.get(slug=project_slug)
     gallery_item = GalleryItem.objects.get(slug=gallery_item_slug)
     return render(request, 'gallery_item_image.html', {'project': project, 'gallery_item': gallery_item,})
+
+def fingerprint():
+    return render(request, 'fingerprint.html')

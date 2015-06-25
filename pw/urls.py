@@ -23,4 +23,5 @@ urlpatterns = patterns('',
     url(r'^([^/]+)/$', 'gallery.views.project'),
     url(r'^([^/]+)/([^/]+)/$', 'gallery.views.gallery_item'),
     url(r'^([^/]+)/([^/]+)/image/$', 'gallery.views.gallery_item_image'),
+    url(r'^fingerpint', 'gallery.views.fingerprint'),
 )
